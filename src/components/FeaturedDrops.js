@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 
-
 export default function FeaturedDrops() {
     return(
         <div>
@@ -116,6 +115,5 @@ export default function FeaturedDrops() {
         
         </div>
      </div>
-        
     )
 }
