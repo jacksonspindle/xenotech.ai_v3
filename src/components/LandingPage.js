@@ -25,10 +25,10 @@ function Model({ ...props }) {
         <mesh geometry={nodes.Plane003_5.geometry} material={materials.hornRight} material-color={props.customColors.collar}/>
         <mesh geometry={nodes.Plane003_6.geometry} material={materials.hornLeft} material-color={props.customColors.collar}/>
         <mesh geometry={nodes.Plane003_7.geometry} material={materials.keychain} material-color={"white"}/>
-        <mesh geometry={nodes.Plane003_8.geometry} material={materials.keychainLink} material-color={"blue"}/>
-        <mesh geometry={nodes.Plane003_9.geometry} material={materials.swoosh} material-color={"blue"}/>
+        <mesh geometry={nodes.Plane003_8.geometry} material={materials.keychainLink} material-color={"red"}/>
+        <mesh geometry={nodes.Plane003_9.geometry} material={materials.swoosh} material-color={"red"}/>
         <mesh geometry={nodes.Plane003_10.geometry} material={materials.toe} material-color={props.customColors.body}/>
-        <mesh geometry={nodes.Plane003_11.geometry} material={materials.badge} material-color={"blue"}/>
+        <mesh geometry={nodes.Plane003_11.geometry} material={materials.badge} material-color={"red"}/>
         <mesh geometry={nodes.Plane003_12.geometry} material={materials.tongueStrap} material-color={"white"}/>
         <mesh geometry={nodes.Plane003_13.geometry} material={materials.laces} material-color={props.customColors.stripes}/>
         <mesh geometry={nodes.Plane003_14.geometry} material={materials.eyelets} material-color={"white"}/>
@@ -52,16 +52,16 @@ export default function LandingPage() {
     const [aboutPageState, setAboutPageState] = useState("none")
    
 
-    const [body, setBody] = useState("ffffff")
-    const [sole, setSole] = useState("ffffff")
-    const [stripes, setStripes] = useState("ffffff")
-    const [collar, setCollar] = useState("ffffff")
+    const [body, setBody] = useState("#000000")
+    const [sole, setSole] = useState("#000000")
+    const [stripes, setStripes] = useState("#ff0000")
+    const [collar, setCollar] = useState("#000000")
     
     return(
 
         <div>
 
-
+{/* 
            <div className='NavBar'>
             
             <div onClick={() => {
@@ -113,49 +113,49 @@ export default function LandingPage() {
                                     setAboutPageState("none")
                                     }} ></img>
             <button className='contactButton'>CONTACT</button>
-        </div>
+        </div> */}
 
         <div className='landingPageContainer' style={{"display": landingPagePageState}} >
 
 
         
                     <div className='canvas' >
-                        <div className='landingPageText'>
+                        {/* <div className='landingPageText'>
                             <p><i style={{  "background": "-webkit-linear-gradient(#eee, #333)",
                                             "-webkit-background-clip": "text",
-                                            "-webkit-text-fill-color": "transparent"}}><i className='xenotech'>XENOTECH</i></i> <i className='digitalDrip'><i>digital</i> <i> drip</i>
-                                                                    <br></br>
-                                                                    <i style={{  "background": "-webkit-linear-gradient(#eee, #333)",
-                                            "-webkit-background-clip": "text",
-                                            "-webkit-text-fill-color": "transparent"}}>Metaverse</i> <i>ready</i></i></p>
-                                                                    <br></br>
-                                                                
+                                            "-webkit-text-fill-color": "transparent"}}><i className='xenotech'>XENO TECH</i></i></p>
                         </div>
+                        <i className='digitalDrip'><i>digital</i> <i> drip</i>
+                                                                    </i> */}
 
-                        <button className='secondaryButton'
-                                onMouseEnter={() => setRotationSpeed(.01)}
-                                onMouseLeave={() => setRotationSpeed(.005)}
-                                onClick={() => {
-                                    setFeaturedDropsPagesState("none");
-                                    setLandingPagePageState("none");
-                                    setShopPageState("block");
-                                    setAboutPageState("none")
-                                    }}
-                               
-                                >Collect Now</button>
+                    
+
+
+
+                        {/* <marquee className="xenotechMarquee" behavior="alternate">XENOTECH</marquee> */}
+
+
 
                         <div className='canvas3D'>
                             <Canvas>
                                 <Suspense fallback={null} >
                                     <directionalLight  
-                                            intensity={0.9} 
+                                            intensity={1} 
                                             angle={0.1} 
                                             penumbra={1} 
-                                            position={[10,15,10]} 
+                                            position={[1,0,1]} 
                                             castShadow
                                             />
+                                    <directionalLight  
+                                            intensity={1} 
+                                            angle={0.1} 
+                                            penumbra={1} 
+                                            position={[-1,0,0]} 
+                                            castShadow
+                                            />
+                                    {/* <spotLight intensity={1} position={[10,15,10]}/> */}
                                     <Model  
-                                            position={[-.4,.07,2.8]} 
+                                            position={[-.1,.07,2.8]} 
                                             rotation={[.4,xRotation,0]}
                                             customColors={{body: body, sole: sole, stripes: stripes, collar: collar}}
                                             rotationSpeed={rotationSpeed}
@@ -165,12 +165,13 @@ export default function LandingPage() {
                         </div>  
                     
 
+                        <div className='colorPickerContainer'>
                         <div className='colorPicker' onMouseEnter={()=> showColorPicker("grid")} >
                         
                         <div className='colorPickerLabel'>
                             <h1 
                                 >Color Picker</h1>
-                            <img src='./arrowDown.svg'></img>
+                                
                         </div>
 
 
@@ -193,15 +194,18 @@ export default function LandingPage() {
                                         <label>Collar</label>
                                 </div>
                             </div>
+                               
                             </div>
+                            
+                        </div>
                         </div>
                     </div>
 
 
 
-                    <div style={{"display": featuredDropsPageState}}>
+                    {/* <div style={{"display": featuredDropsPageState}}>
                     <FeaturedDrops   />
-                    </div>
+                    </div> */}
 
 
                      </div>
@@ -214,6 +218,19 @@ export default function LandingPage() {
                         <AboutPage />
                     </div>
 
+                    <div className='buttonContainer'>
+                     <button className='secondaryButton'
+                                onMouseEnter={() => setRotationSpeed(.01)}
+                                onMouseLeave={() => setRotationSpeed(.005)}
+                                onClick={() => {
+                                    setFeaturedDropsPagesState("none");
+                                    setLandingPagePageState("none");
+                                    setShopPageState("block");
+                                    setAboutPageState("none")
+                                    }}
+                               
+                                >ENTER</button>
+                    </div>
 
 
             </div>

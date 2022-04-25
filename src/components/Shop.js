@@ -2,11 +2,22 @@ import React from 'react'
 
 
 export default function Shop(props) {
+
+  
+    
     return(
         <div>
             <div className='featuredDrops'>
         
-        <div className='FeaturedDropsCard'>
+        <div className='FeaturedDropsCard' onMouseEnter={(event) => {
+            // var comingSoon = document.getElementById("comingSoonWrapper");
+            // comingSoon.style.top = event.clientY + "px";
+            // comingSoon.style.left = event.clientX + "px";
+            // const mouseY = event.clientY + "px"
+            // const mouseX = event.clientX + "px"
+
+            
+        }}>
             <div className='FeaturedDropsTitle'>
             </div>
             <div >
@@ -19,7 +30,9 @@ export default function Shop(props) {
                     <h1>Platonic Solids Ring</h1>
                 </div>
             </div>
+            {/* <div className='comingSoonWrapper' style={{"top": mouseY, "left": mouseX }}>TEST</div> */}
         </div>
+        
         <div className='FeaturedDropsCard'>
             <div className='FeaturedDropsTitle'>
             </div>
