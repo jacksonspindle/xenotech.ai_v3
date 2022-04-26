@@ -7,6 +7,6 @@ This is a draft of the xenotech.ai website using a shoe color customizer on the 
 
 ### Stack
 
-- html/css/javascript
+- html/css/javascript/react
 - three.js
 - blender (3D model)
